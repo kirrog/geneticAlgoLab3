@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Random;
 
 public class MyMutation implements EvolutionaryOperator<double[]> {
-    private static double factor = 3.5;
+    private static double factor = 5.0;
 
     public List<double[]> apply(List<double[]> population, Random random) {
         for (int i = 0; i < population.size(); i++) {
-            if (random.nextDouble() > 0.1) {
+            if (random.nextDouble() > 0.0) {
                 double[] entity = population.get(i);
                 for (int j = 0; j < entity.length; j++) {
                     if (random.nextDouble() > 0.0) {
