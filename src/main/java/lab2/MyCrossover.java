@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MyCrossover extends AbstractCrossover<double[]> {
-    private static double factor = 6.5;
+    private static double factor = 7.5;
     private static double prob = 0.95;
     private static double prob_choose = 0.5;
 
