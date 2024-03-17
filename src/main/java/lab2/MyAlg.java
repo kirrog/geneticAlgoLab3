@@ -12,10 +12,10 @@ import java.util.Random;
 public class MyAlg {
 
     public static void main(String[] args) {
-        int dimension = 2; // dimension of problem
-        int populationSize = 10; // size of population
-        int generations = 10; // number of generations
-        int num_of_loops = 100000;
+        int dimension = 10; // dimension of problem
+        int populationSize = 10; // size of population max 100
+        int generations = 1000; // number of generations max 10000
+        int num_of_loops = 100;
 
         double accum = 0.0;
 
