@@ -10,10 +10,10 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
 
     public List<double[]> apply(List<double[]> population, Random random) {
         for (int i = 0; i < population.size(); i++) {
-            if (random.nextDouble() > 0.5) {
+            if (random.nextDouble() > 0.8) {
                 double[] entity = population.get(i);
                 for (int j = 0; j < entity.length; j++) {
-                    if (random.nextDouble() > 0.3) {
+                    if (random.nextDouble() > 0.4) {
                         entity[j] = (entity[j] + (((random.nextDouble() * 10.0) - 5.0) / (factor))) / (1 + (1 / factor));
                     }
                 }
