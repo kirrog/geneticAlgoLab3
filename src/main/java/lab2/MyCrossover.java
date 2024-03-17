@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Random;
 
 public class MyCrossover extends AbstractCrossover<double[]> {
+    private static double factor = 6.5;
+
     protected MyCrossover() {
         super(1);
     }
@@ -14,21 +16,14 @@ public class MyCrossover extends AbstractCrossover<double[]> {
     protected List<double[]> mate(double[] p1, double[] p2, int i, Random random) {
         ArrayList<double[]> children = new ArrayList<double[]>();
         double[] c1 = new double[p1.length];
-        double[] c2 = new double[p1.length];
-        int split_position_start = random.nextInt(p1.length);
-        int split_position_stop = random.nextInt(p1.length);
-        if (split_position_start > split_position_stop){
-            int temp = split_position_start;
-            split_position_start = split_position_stop;
-            split_position_stop = temp;
-        }
+        double[] c2 = new double[p2.length];
+
         for (int j = 0; j < p1.length; j++) {
-            if (j < split_position_start ||  j > split_position_stop) {
-                c1[j] = p1[j];
-                c2[j] = p2[j];
-            } else {
-                c1[j] = p2[j];
-                c2[j] = p1[j];
+            if (random.nextDouble() > 0.0) {
+                c1[j] = (p1[j] + p2[j] + (((random.nextDouble() * 10.0) - 5.0) / (factor))) / (2 + (1 / factor));
+            }
+            if (random.nextDouble() > 0.0) {
+                c2[j] = (p1[j] + p2[j] + (((random.nextDouble() * 10.0) - 5.0) / (factor))) / (2 + (1 / factor));
             }
         }
         children.add(c1);
